@@ -1,2 +1,1 @@
-# js-for-designer
-デザイナーに覚えてほしいJS
+Slideshow is [here](https://gitpitch.com/lightsound/gitpitch-boilerplate)

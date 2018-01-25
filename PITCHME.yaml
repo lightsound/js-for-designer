@@ -1,0 +1,20 @@
+#開発モードか（スライドを作り終えたらtrueにする）
+published : false
+
+# テーマ (black, moon, night, beige, sky, white)
+theme : white
+
+# カスタムcss
+theme-override : assets/css/style.css
+
+#最後のページ後、最初のページにループさせるか
+loop : false
+
+#フットノートの設定
+footnote : ""
+
+#スライドのページ数表示の設定
+slide-number: true
+
+#センター表示させるか
+vertical-center : true
