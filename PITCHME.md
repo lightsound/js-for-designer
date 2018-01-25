@@ -63,7 +63,7 @@ ES2015 で let, const が増えた
 
 ### var
 
-ES2015 以降、これを使うことはほぼ無い  
+ES2015 以降 var を使うことはほぼ無い  
 var はエラーの元で使わなくていいので  
 もう忘れてください
 
@@ -80,9 +80,9 @@ hoge = "fuga"; // OK
 
 +++
 
-定数的な使い方をしたい場合は const を使う
-
 ### const
+
+定数的な使い方をしたい場合は const を使う
 
 ```javascript
 const hoge = "hoge";
