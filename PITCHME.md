@@ -47,6 +47,51 @@ ES2015 が使えるようになっていることを
 
 ---
 
+## var, let, const
+
++++
+
+### 目的
+
+今までの JS では var しか無かったが
+ES2015 で let, const が増えた  
+ここではその使い方をゆるく学ぶ
+
++++
+
+### var
+
+ES2015 以降、これを使うことはほぼ無い
+var はエラーの元で使わなくていいので  
+もう忘れてください
+
++++
+
+### let
+
+後で再代入する可能性がある変数は let を使う
+
+```javascript
+let hoge = "hoge";
+hoge = "fuga"; // OK
+```
+
++++
+
+### const
+
+```javascript
+const hoge = "hoge";
+hoge = "fuga"; // ERROR
+```
+
+### 考察
+
+他にもクロージャーの話とかあるが  
+とりあえずコレだけ覚えておけば問題ない
+
+---
+
 ## アロー関数
 
 +++
@@ -71,7 +116,7 @@ function hoge(x, y) {
 
 // アロー関数
 const hoge = (x, y) => {
-  return x + y;
+  return x + y;
 };
 ```
 
@@ -293,4 +338,4 @@ const yahoo = `${protocol}www.yahoo.co.jp`;
 な、カッコイイだろ？  
 積極的に使おうぜ
 
-+++
+---
