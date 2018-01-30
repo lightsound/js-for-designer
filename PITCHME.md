@@ -418,8 +418,6 @@ react でもよく使われるのでここで学ぼう
 
 ### 普通のパターン
 
-before
-
 ```javascript
 const ages = [20, 30, 40];
 const hatachi = ages[0];
@@ -430,8 +428,6 @@ const yosoji = ages[2];
 +++
 
 ### 分割代入パターン
-
-after
 
 ```javascript
 const ages = [20, 30, 40];
@@ -476,7 +472,7 @@ const { name, age, body: { height, weight } } = this.props;
 
 +++
 
-###　配列の操作が簡単
+### 配列の操作が簡単
 
 ```javascript
 // 今まで
@@ -508,10 +504,10 @@ add(...args); // 6
 
 ```javascript
 // こういう props があるとして
-// const props = {
-//   name: '島袋',
-//   age: 25',
-// }
+const props = {
+  name: '島袋',
+  age: 25',
+}
 
 // 従来
 <MyComponent name={props.name} age={props.age} />
