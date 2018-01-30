@@ -232,9 +232,7 @@ import { createStore, combineReducers } from "redux";
 
 ### export 側
 
-なんで {} があったりなかったりするの？  
-と思うかもしれない  
-ちょっと実際のモジュールを見てみる  
+export 側をモジュールを見てみる  
 （講座の便宜上勝手に書き換えている笑）
 
 ```javascript
@@ -473,6 +471,67 @@ const { name, age, body: { height, weight } } = this.props;
 
 ### 目的
 
-「...」で表現される演算子で
+「...」で表現される演算子で  
+色々と便利なやつなんで覚えよう
 
 +++
+
+###　配列の操作が簡単
+
+```javascript
+// 今まで
+var arr1 = [0, 1, 2];
+var arr2 = [3, 4, 5];
+Array.prototype.push.apply(arr1, arr2);
+
+// スプレッド演算子
+var arr1 = [0, 1, 2];
+var arr2 = [3, 4, 5];
+arr1.push(...arr2);
+```
+
++++
+
+### 関数の引数として使う
+
+```javascript
+function add(x, y, z) {
+  console.log(x + y + z);
+}
+const args = [1, 2, 3];
+add(...args); // 6
+```
+
++++
+
+### React でよく使われるやつ
+
+```javascript
+// こういう props があるとして
+// const props = {
+//   name: '島袋',
+//   age: 25',
+// }
+
+// 従来
+<MyComponent name={props.name} age={props.age} />
+
+// スプレッド演算子
+<MyComponent {...props} />
+```
+
++++
+
+### まとめ
+
+簡素な記述ができる  
+上記以外にも色んな場面で使われる
+
+---
+
+## おわりに
+
+こんな感じで JS は  
+昔とだいぶ記述が変わっているので  
+基本的な部分だけでも覚えて  
+快適コーディングできるようにしよう
