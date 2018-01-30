@@ -33,7 +33,7 @@ ES2015 が使えるようになっていることを
 
 ## 目次
 
-1. var, let, const
+1. var / let / const
 
 1. アロー関数
 
@@ -43,9 +43,9 @@ ES2015 が使えるようになっていることを
 
 1. map 関数
 
-1. スプレッド演算子
-
 1. 分割代入
+
+1. スプレッド演算子
 
 ---
 
@@ -189,13 +189,12 @@ const hoge = props =>
 
 ### 考察
 
-「結局どれを使えばいいの？」  
-というのは当たり前の質問だが  
-答えはプロジェクトによるとしか言えない
+Q. 結局どれを使えばいいの？
 
+A. プロジェクトによる  
 プロジェクトによって  
 コーディングのルールがあると思うが  
-基本的にはそれに従うのが良い
+基本的にはそれに従えば OK
 
 ---
 
@@ -222,7 +221,6 @@ const hoge = props =>
 ```javascript
 import React, { Component } from "react";
 import { createStore, combineReducers } from "redux";
-import App from "./App";
 ```
 
 +++
@@ -243,12 +241,6 @@ export { Component };
 ```javascript
 // redux
 export { createStore, combineReducers };
-```
-
-```javascript
-// App
-const App = () => <h1>Headline</h1>;
-export default App;
 ```
 
 +++
@@ -272,7 +264,8 @@ export const Fuga = () => <div>fuga</div>;
 
 ### {} が無いとき part1
 
-export 側はこうする
+export default を使う  
+（ファイル内で 1 度しか使えない）
 
 ```javascript
 // パターン1
@@ -290,7 +283,7 @@ export default () => <div>hoge</div>;
 {} が無い場合は import 側は勝手に命名可能
 
 ```javascript
-// export
+// export (Hoge.js)
 const Hoge = () => <div>hoge</div>;
 export default Hoge;
 
@@ -301,10 +294,6 @@ import MyFavoriteName from "./Hoge";
 +++
 
 ### 考察
-
-実は細かいところで違いがあったりするが  
-とりあえずこのレベルを最低限覚えておけば  
-コーディング時に困ることは少なくなる
 
 こちらもプロジェクトによって  
 export の規約などを決めているところもあれば  
@@ -341,7 +330,146 @@ const yahoo = `${protocol}www.yahoo.co.jp`;
 
 ### 考察
 
-な、カッコイイだろ？  
 積極的に使おうぜ
 
 ---
+
+## map 関数
+
++++
+
+### 目的
+
+繰り返しの list を作る場合に  
+map 関数がよく使われる  
+その使い方を学ぼう
+
++++
+
+### パース
+
+api から引っ張ってきたデータを
+
+```javascript
+{
+  users: [
+    { name: "島袋", age: 20 },
+    { name: "山袋", age: 30 },
+    { name: "海袋", age: 40 }
+  ];
+}
+```
+
++++
+
+### パース
+
+こうしたい
+
+```html
+<ul>
+  <li>島袋: 20歳</li>
+  <li>山袋: 30歳</li>
+  <li>海袋: 40歳</li>
+</ul>
+```
+
++++
+
+### こうする
+
+```javascript
+response = fetch(url); // さっきのjsonが入る
+return (
+  <ul>
+    {response.data.map(val => (
+      <li>
+        {val.name}: {val.age}歳
+      </li>
+    ))}
+  </ul>
+);
+```
+
++++
+
+### 考察
+
+このように配列の繰り返しに使われる  
+api からデータを引っ張ってきて  
+パースするときに頻出なので覚えよう
+
+---
+
+## 分割代入
+
++++
+
+### 目的
+
+配列やオブジェクトからデータを取り出し  
+別の変数に代入することを簡単にするために  
+分割代入というものがある
+
+react でも頻出なのでここで学ぼう
+
++++
+
+### 普通のパターン
+
+before
+
+```javascript
+const ages = [20, 30, 40];
+const hatachi = ages[0];
+const misoji = ages[1];
+const yosoji = ages[2];
+```
+
++++
+
+### 分割代入パターン
+
+after
+
+```javascript
+const ages = [20, 30, 40];
+const [hatachi, misoji, yosoji] = ages;
+```
+
++++
+
+### react でよく使われるパターン
+
+```javascript
+// 下記データがあるとして
+this.props = {
+  name: "しまぶー",
+  age: 25,
+  body: {
+    height: 175,
+    weight: 60
+  }
+};
+
+const { name, age, body: { height, weight } } = this.props;
+```
+
++++
+
+### 考察
+
+これを使うことによって  
+記述量を減らすことができる
+
+---
+
+## スプレッド演算子
+
++++
+
+### 目的
+
+「...」で表現される演算子で
+
++++
