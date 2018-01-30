@@ -383,7 +383,7 @@ api から引っ張ってきたデータを
 response = fetch(url); // さっきのjsonが入る
 return (
   <ul>
-    {response.data.map(val => (
+    {response.users.map(val => (
       <li>
         {val.name}: {val.age}歳
       </li>

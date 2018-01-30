@@ -1,5 +1,5 @@
 #開発モードか（スライドを作り終えたらtrueにする）
-published : false
+published : true
 
 # テーマ (black, moon, night, beige, sky, white)
 theme : white
