@@ -20,7 +20,7 @@ JS フレームワークでよく使われる
 ES2015 が使えるようになっていることを  
 この講座では前提としている。
 
-そのため webpack, babel などの  
+そのため webpack, babel などの  
 環境構築面については対象外とする
 
 ## 目次
@@ -49,7 +49,7 @@ ES2015 で let, const が増えた
 
 ### var
 
-ES2015 以降 var を使うことはほぼ無い  
+ES2015 以降 var を使うことはほぼ無い  
 var はエラーの元で使わなくていいので  
 もう忘れてください
 
@@ -83,7 +83,7 @@ name = "山袋"; // ERROR
 
 ### 目的
 
-今まで **function** で  
+今まで **function** で  
 関数を書いてきたと思われるが  
 ES2015 では **アロー関数** という  
 新しい記法を用いて書くことが多くなった  
@@ -99,7 +99,7 @@ function hoge(x, y) {
 
 // アロー関数
 const hoge = (x, y) => {
-  return x + y;
+  return x + y;
 };
 ```
 
@@ -109,7 +109,7 @@ const hoge = (x, y) => {
 const hoge = (x, y) => x + y;
 ```
 
-### 引数が 1 つの場合 () は省略可
+### 引数が 1 つの場合 () は省略可
 
 ```javascript
 const hoge = x => x;
@@ -174,7 +174,7 @@ this のスコープが違うとか
 この章ではそのモジュールの  
 受け渡しの方法を学ぶ
 
-### import 側
+### import 側
 
 例えば React を書くときに  
 下記の記述を見たことはないだろうか？
@@ -184,7 +184,7 @@ import React, { Component } from "react";
 import { createStore, combineReducers } from "redux";
 ```
 
-### export 側
+### export 側
 
 export 側をモジュールを見てみる  
 （講座の便宜上勝手に書き換えている笑）
@@ -262,7 +262,7 @@ import MyFavoriteName from "./Hoge";
 const protocol = "https://";
 const yahoo = protocol + "www.yahoo.co.jp";
 
-// スマート
+// スマート
 const protocol = "https://";
 const yahoo = `${protocol}www.yahoo.co.jp`;
 ```
