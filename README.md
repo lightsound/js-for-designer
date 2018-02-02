@@ -406,10 +406,10 @@ add(...args); // 6
 
 ```javascript
 // こういう props があるとして
-const props = {
-  name: '島袋',
-  age: 25',
-}
+// const props = {
+//   name: '島袋',
+//   age: 25',
+// };
 
 // 従来
 <MyComponent name={props.name} age={props.age} />
